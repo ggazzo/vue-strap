@@ -20,7 +20,14 @@ export default {
   },
   methods: {
     toggle (e) {
+      
       if (e && this.trigger === 'contextmenu') e.preventDefault()
+      if (this.$refs.content) {
+        let container = $(this.$refs.content)
+        if (container[0] == e.target || container[0].contains(e.target)) {
+          return
+        }
+      }
       if (!(this.show = !this.show)) { return }
       this.$nextTick(() => {
         const popover = this.$refs.popover

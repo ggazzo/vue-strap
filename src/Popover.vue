@@ -4,7 +4,7 @@
     <div ref="popover" v-if="show" :class="['popover',placement]" :transition="effect">
       <div class="arrow"></div>
       <h3 class="popover-title" v-if="title"><slot name="title">{{title}}</slot></h3>
-      <div class="popover-content"><slot name="content"><span v-html="content"></span></slot></div>
+      <div class="popover-content" ref='content'><slot name="content"><span v-html="content"></span></slot></div>
     </div>
   </span>
 </template>

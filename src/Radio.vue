@@ -73,7 +73,7 @@ export default {
     }
     if (this.$parent._radioGroup) {
       if (this.$parent.val) {
-        this.check = (this.$parent.val === this.checkedValue)
+        this.check = this.$parent.val
       } else if (this.check) {
         this.$parent.val = this.checkedValue
       }
